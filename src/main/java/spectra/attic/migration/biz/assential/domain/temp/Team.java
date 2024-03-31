@@ -8,6 +8,7 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import spectra.attic.migration.biz.assential.domain.source.SourceTeam;
 import spectra.attic.migration.biz.assential.domain.source.SourceUser;
 
 @Getter
@@ -25,7 +26,7 @@ public class Team {
 
     private String password;
 
-    public static Team fromSource(SourceUser sourceUser) {
-        return new Team(sourceUser.getId(), sourceUser.getUsername(), sourceUser.getPassword());
+    public static Team fromSource(SourceTeam sourceTeam) {
+        return new Team(sourceTeam.getId(), sourceTeam.getUsername(), sourceTeam.getPassword());
     }
 }
